@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin: 20px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        hr {
+            border: 1px solid #ccc;
+        }
+
+        table {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #888;
+            margin: 20px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        table tr {
+            margin: 10px;
+        }
+
+        table td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form th:action="@{/ticket-get}" method="get">
+        Enter Ticket Number: <input type="text" name="ticketNum">
+        <input type="submit" value="Get Ticket">
+    </form>
+    <hr>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><p th:text="${ticket.name}"></p></td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td><p th:text="${ticket.status}"></p></td>
+        </tr>
+        <tr>
+            <td>From:</td>
+            <td><p th:text="${ticket.from}"></p></td>
+        </tr>
+        <tr>
+            <td>To:</td>
+            <td><p th:text="${ticket.to}"></p></td>
+        </tr>
+        <tr>
+            <td>DOJ:</td>
+            <td><p th:text="${ticket.doj}"></p></td>
+        </tr>
+        <tr>
+            <td>Train Number:</td>
+            <td><p th:text="${ticket.trainNumber}"></p></td>
+        </tr>
+    </table>
+</body>
+</html>

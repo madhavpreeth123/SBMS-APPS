@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #888;
+            margin: 20px;
+            width: 300px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table tr {
+            margin: 10px;
+        }
+
+        table td {
+            padding: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ticket Booking</h2>
+    <p th:text="${msg}"></p>
+    <form th:action="@{/book-ticket}" th:object="${passenger}" method="POST">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td>From:</td>
+                <td><input type="text" th:field="*{from}"></td>
+            </tr>
+            <tr>
+                <td>To:</td>
+                <td><input type="text" th:field="*{to}"></td>
+            </tr>
+            <tr>
+                <td>DOJ:</td>
+                <td><input type="text" th:field="*{doj}"></td>
+            </tr>
+            <tr>
+                <td>TrainNum:</td>
+                <td><input type="text" th:field="*{trainNumber}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="BookTicket"></td>
+            </tr>
+        </table>
+    </form>
+    <a href="ticket">View Ticket</a>
+</body>
+</html>

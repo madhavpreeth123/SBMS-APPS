@@ -1,0 +1,11 @@
+{
+	"id": 101,
+	"name": "madhav",
+	"email": "m@gamil.com",
+	"phno": 678568854,
+	"addr": {
+		"city": "palamaner",
+		"state": "AP",
+		"country": "India"
+	}
+}
